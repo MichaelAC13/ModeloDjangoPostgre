@@ -79,12 +79,11 @@ class DatabaseViewCategorias(viewsets.ModelViewSet):
             meses1.append(d['mes_referencia'])
             valores1.append(d['total_vendas'])
             categoria1.append(s1)
-        # meses.append(meses1)   
+
         res['meses'].append(meses) 
         res['meses'].append(meses1)
         res['valores'].append(valores) 
         res['valores'].append(valores1)
-        # res['categoria'].append(categoria) 
-        # res['categoria'].append(categoria1)  
+ 
         return Response(res, status=status.HTTP_200_OK)
 
