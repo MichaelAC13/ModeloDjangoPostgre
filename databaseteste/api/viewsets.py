@@ -60,20 +60,31 @@ class DatabaseViewCategorias(viewsets.ModelViewSet):
         df.total_vendas = df.total_vendas.astype(int)
         df = df.groupby('mes_referencia').sum('total_vendas').reset_index().to_dict('records')
         res = {"meses":[], "valores":[], "categoria":[]}
+        meses = []
+        valores = []
+        categoria = []
         for d in df:
             s1 = 'Online'
-            res['meses'].append(d['mes_referencia'])
-            res['valores'].append(d['total_vendas'])
-            res['categoria'].append(s1)
+            meses.append(d['mes_referencia'])
+            valores.append(d['total_vendas'])
+            categoria.append(s1)
         df = df1.loc[df1['tipo_compra']=='presencial']
         df.total_vendas = df.total_vendas.astype(int)
         df = df.groupby('mes_referencia').sum('total_vendas').reset_index().to_dict('records')
-     
+        meses1 = []
+        valores1 = []
+        categoria1 = []
         for d in df:
             s1 = 'presencial'
-            res['meses'].append(d['mes_referencia'])
-            res['valores'].append(d['total_vendas'])
-            res['categoria'].append(s1)
-
+            meses1.append(d['mes_referencia'])
+            valores1.append(d['total_vendas'])
+            categoria1.append(s1)
+        # meses.append(meses1)   
+        res['meses'].append(meses) 
+        res['meses'].append(meses1)
+        res['valores'].append(valores) 
+        res['valores'].append(valores1)
+        res['categoria'].append(categoria) 
+        res['categoria'].append(categoria1)  
         return Response(res, status=status.HTTP_200_OK)
 
