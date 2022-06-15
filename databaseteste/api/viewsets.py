@@ -59,7 +59,7 @@ class DatabaseViewCategorias(viewsets.ModelViewSet):
         df = df.loc[df['tipo_compra']=='Online']
         df.total_vendas = df.total_vendas.astype(int)
         df = df.groupby('mes_referencia').sum('total_vendas').reset_index().to_dict('records')
-        res = {"meses":[], "valores":[], "categoria":[]}
+        res = {"meses":[], "valores":[], "categoria":['Online','presencial']}
         meses = []
         valores = []
         categoria = []
@@ -84,7 +84,7 @@ class DatabaseViewCategorias(viewsets.ModelViewSet):
         res['meses'].append(meses1)
         res['valores'].append(valores) 
         res['valores'].append(valores1)
-        res['categoria'].append(categoria) 
-        res['categoria'].append(categoria1)  
+        # res['categoria'].append(categoria) 
+        # res['categoria'].append(categoria1)  
         return Response(res, status=status.HTTP_200_OK)
 
