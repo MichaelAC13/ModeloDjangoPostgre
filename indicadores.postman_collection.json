@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "0831b0cc-139f-4489-a8ff-5212ef803011",
+		"name": "indicadores",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18943270"
+	},
+	"item": [
+		{
+			"name": "https://api-django-michael.herokuapp.com/indicadores/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api-django-michael.herokuapp.com/indicadores/",
+					"protocol": "https",
+					"host": [
+						"api-django-michael",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"indicadores",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://api-django-michael.herokuapp.com/totalvendido/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api-django-michael.herokuapp.com/totalvendido/",
+					"protocol": "https",
+					"host": [
+						"api-django-michael",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"totalvendido",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://api-django-michael.herokuapp.com/totalcategorias/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api-django-michael.herokuapp.com/totalcategorias/",
+					"protocol": "https",
+					"host": [
+						"api-django-michael",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"totalcategorias",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
